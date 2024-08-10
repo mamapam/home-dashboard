@@ -1,0 +1,6 @@
+html,
+body {
+  @apply font-body;
+  @apply bg-dark-100;
+  @apply text-white;
+}
