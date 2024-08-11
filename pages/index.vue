@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import PrayerTimes from '../components/PrayerTimes.vue';
 import GridDisplay from '../components/GridDisplay.vue';
 import TheDate from '../components/TheDate.vue';
 </script>
@@ -8,6 +9,9 @@ import TheDate from '../components/TheDate.vue';
     <GridDisplay>
       <template #item1>
         <TheDate />
+      </template>
+      <template #item2>
+        <PrayerTimes />
       </template>
     </GridDisplay>
   </main>

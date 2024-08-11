@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TheCard from './TheCard.vue';
 import { useCurrentTime } from '~/composables/useCurrentTime';
 
 const currentTime = useCurrentTime();
@@ -39,10 +40,10 @@ const formattedDate = computed(() => {
 <template>
   <TheCard class="h-[85px]">
     <div class="flex flex-col justify-center items-center">
-      <p1 class="font-bold text-xl text-center">{{ formattedDate }}</p1>
-      <p1 class="font-bold text-3.5xl text-center text-primary-500">
-        {{ currentTime.toLocaleTimeString() }}
-      </p1>
+      <p class="font-bold text-xl text-center">{{ formattedDate }}</p>
+      <p class="font-bold text-3.5xl text-center text-primary-500">
+        {{ currentTime.toLocaleTimeString('en-US') }}
+      </p>
     </div>
   </TheCard>
 </template>

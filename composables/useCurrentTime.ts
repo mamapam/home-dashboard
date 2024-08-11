@@ -1,7 +1,7 @@
 import { useIntervalFn } from '@vueuse/core';
 
 export const useCurrentTime = () => {
-  const currentTime = ref(new Date());
+  const currentTime = useState(() => new Date());
 
   const updateCurrentTime = () => {
     currentTime.value = new Date();
@@ -9,7 +9,7 @@ export const useCurrentTime = () => {
 
   useIntervalFn(() => {
     updateCurrentTime();
-  }, 1000);
+  }, 500);
 
   return currentTime;
 };
