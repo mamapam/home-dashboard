@@ -4,7 +4,7 @@ export interface IPrayerTime {
   fajrBegins: string;
   fajrIqama: string;
   sunrise: string;
-  dhuhrBeings: string;
+  dhuhrBegins: string;
   dhuhrIqama: string;
   asrBegins: string;
   asrIqama: string;
@@ -13,6 +13,7 @@ export interface IPrayerTime {
   ishaBegins: string;
   ishaIqama: string;
   jummah1Iqama: string;
+  date: string;
   jummah2Iqama: string;
   jummah3Iqama: string;
 }
