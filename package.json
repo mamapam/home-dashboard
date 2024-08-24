@@ -16,6 +16,8 @@
     "@vueuse/core": "^10.11.1",
     "@vueuse/nuxt": "^10.11.1",
     "axios": "^1.7.3",
+    "jsmpeg": "^1.0.0",
+    "node-rtsp-stream": "^0.0.9",
     "nuxt": "^3.12.4",
     "papaparse": "^5.4.1",
     "vue": "latest"

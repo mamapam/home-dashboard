@@ -21,9 +21,13 @@ watch(currentTime, async (time) => {
 </script>
 
 <template>
-  <TheCard>
-    <div>
-      <h3 class="text-2xl text-primary-500 font-bold">Prayer Times</h3>
+  <TheCard class="h-[274px]">
+    <div class="flex">
+      <h3
+        class="text-2xl text-primary-500 font-bold origin-top-left rotate-[270deg] translate-y-[200px] w-[50px] text-nowrap"
+      >
+        Prayer Times
+      </h3>
       <table>
         <tbody>
           <tr>
@@ -83,7 +87,13 @@ th[scope='row'] {
   @apply text-right;
 }
 
-th[scope='col']:nth-child(1) {
-  @apply pr-10;
+th[scope='col'] {
+  @apply text-mixed-600;
+}
+
+td {
+  @apply text-primary-500;
+  @apply w-40;
+  @apply text-center;
 }
 </style>

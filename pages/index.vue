@@ -13,6 +13,15 @@ import TheDate from '../components/TheDate.vue';
       <template #item3>
         <PrayerTimes />
       </template>
+      <!-- <template #item6>
+        <CameraStream port="9000" camera-id="porch" />
+      </template>
+      <template #item7>
+        <CameraStream port="9001" camera-id="garage" />
+      </template>
+      <template #item8>
+        <CameraStream port="9002" camera-id="backyard" />
+      </template> -->
     </GridDisplay>
   </main>
 </template>

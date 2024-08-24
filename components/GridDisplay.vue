@@ -4,10 +4,10 @@
       <div class="row-span-1 flex self-center">
         <slot name="item1"></slot>
       </div>
-      <div class="row-start-2 row-span-3">
+      <div class="row-start-2 row-span-4">
         <slot name="item2"></slot>
       </div>
-      <div class="row-start-5 row-span-4">
+      <div class="row-start-6 row-span-3">
         <slot name="item3"></slot>
       </div>
     </div>
