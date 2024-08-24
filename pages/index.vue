@@ -10,7 +10,7 @@ import TheDate from '../components/TheDate.vue';
       <template #item1>
         <TheDate />
       </template>
-      <template #item2>
+      <template #item3>
         <PrayerTimes />
       </template>
     </GridDisplay>

@@ -12,8 +12,8 @@ export default defineEventHandler(async (event) => {
 
     const csvMappedData: IPrayerTime[] = csvData.map((item) => {
       return {
-        month: item.Month,
-        day: item.Day,
+        month: item['Month'],
+        day: item['Day'],
         fajrBegins: item['Fajr Begins'],
         fajrIqama: item['Fajr Iqama'],
         sunrise: item['Sunrise'],

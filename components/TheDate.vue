@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import TheCard from './TheCard.vue';
 import { useCurrentTime } from '~/composables/useCurrentTime';
+import {
+  convertDayNumberToString,
+  convertMonthNumberToString
+} from '~/utils/calendar-utils';
 
 const currentTime = useCurrentTime();
 
@@ -9,31 +13,8 @@ const formattedDate = computed(() => {
   const month = currentTime.value.getUTCMonth();
   const date = currentTime.value.getDate();
   const year = currentTime.value.getFullYear();
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ];
-  const days = [
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday'
-  ];
 
-  return `${days[day]}, ${months[month]} ${date}, ${year}`;
+  return `${convertDayNumberToString(day)}, ${convertMonthNumberToString(month)} ${date}, ${year}`;
 });
 </script>
 
