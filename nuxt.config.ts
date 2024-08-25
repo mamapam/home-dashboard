@@ -6,7 +6,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     cameraPorch: '',
     cameraGarage: '',
-    cameraBackyard: ''
+    cameraBackyard: '',
+    weatherApiKey: '',
+    latitude: '',
+    longitude: ''
   },
   eslint: {
     config: {

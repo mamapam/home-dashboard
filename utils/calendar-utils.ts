@@ -30,3 +30,8 @@ export const convertDayNumberToString = (dayNum: number) => {
 
   return days[dayNum];
 };
+
+export const convertUnixToTime = (unixTime: number) => {
+  const date = new Date(unixTime * 1000);
+  return date.toLocaleTimeString('en-US');
+};

@@ -10,6 +10,9 @@ import TheDate from '../components/TheDate.vue';
       <template #item1>
         <TheDate />
       </template>
+      <template #item2>
+        <WeatherDisplay />
+      </template>
       <template #item3>
         <PrayerTimes />
       </template>
