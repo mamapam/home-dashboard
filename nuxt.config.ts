@@ -3,13 +3,16 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@vueuse/nuxt'],
+  ssr: false,
   runtimeConfig: {
-    cameraPorch: '',
-    cameraGarage: '',
-    cameraBackyard: '',
     weatherApiKey: '',
     latitude: '',
-    longitude: ''
+    longitude: '',
+    public: {
+      camera1: '',
+      camera2: '',
+      camera3: ''
+    }
   },
   eslint: {
     config: {
@@ -17,7 +20,8 @@ export default defineNuxtConfig({
         quotes: 'single',
         semi: true,
         indent: 2,
-        commaDangle: 'never'
+        commaDangle: 'never',
+        braceStyle: 'allman'
       }
     }
   },
