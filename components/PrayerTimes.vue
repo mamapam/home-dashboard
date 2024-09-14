@@ -13,15 +13,15 @@ const prayerTime = ref<IPrayerTime>();
 const { data } = await useFetch<IPrayerTime>(`/api/prayertimes?${queryParams.value}`);
 prayerTime.value = data.value!;
 
-watch(currentTime, async (time) => {
-  if (time.getHours() === 0 && time.getMinutes() === 0 && time.getSeconds() === 0) {
+watch(currentTime, async () => {
+  if (currentTime.value.getHours() === 0 && currentTime.value.getMinutes() === 0 && currentTime.value.getSeconds() === 30) {
     prayerTime.value = await $fetch(`/api/prayertimes?${queryParams.value}`);
   }
 });
 </script>
 
 <template>
-  <TheCard class="h-[274px]">
+  <TheCard>
     <div class="flex">
       <h3
         class="text-2xl text-primary-500 font-bold origin-top-left rotate-[270deg] translate-y-[200px] w-[50px] text-nowrap"
