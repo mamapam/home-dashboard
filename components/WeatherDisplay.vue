@@ -1,9 +1,15 @@
 <script setup lang="ts">
+import { useIntervalFn } from '@vueuse/core';
 import type { ICurrentWeather } from '../types/ICurrentWeather';
 
 const { data } = await useFetch<ICurrentWeather>('/api/weather');
-const temperature = computed(() => data.value?.main.temp !== null ? Math.floor(data.value!.main.temp) : null);
-const feelsLike = computed(() => data.value?.main.feels_like !== null ? Math.floor(data.value!.main.feels_like) : null);
+const weatherData = ref(data);
+const temperature = computed(() => weatherData.value?.main.temp !== null ? Math.floor(weatherData.value!.main.temp) : null);
+const feelsLike = computed(() => weatherData.value?.main.feels_like !== null ? Math.floor(weatherData.value!.main.feels_like) : null);
+
+useIntervalFn(async () => {
+  weatherData.value = await $fetch<ICurrentWeather>('/api/weather');
+}, 3600000);
 </script>
 
 <template>
@@ -11,12 +17,12 @@ const feelsLike = computed(() => data.value?.main.feels_like !== null ? Math.flo
     <div class="w-full h-full">
       <div class="flex justify-around pb-3">
         <div class="flex flex-col">
-          <p class="text-primary-500 font-bold text-xl">{{ data?.name }},  {{ data?.sys.country }}</p>
-          <p class="text-lg">{{ data?.weather[0].description }}</p>
+          <p class="text-primary-500 font-bold text-xl">{{ weatherData?.name }},  {{ weatherData?.sys.country }}</p>
+          <p class="text-lg">{{ weatherData?.weather[0].description }}</p>
         </div>
         <div class="-m-6">
           <img
-            :src="`https://openweathermap.org/img/wn/${data?.weather[0].icon}@2x.png`"
+            :src="`https://openweathermap.org/img/wn/${weatherData?.weather[0].icon}@2x.png`"
             alt="Weather"
           />
         </div>
@@ -33,15 +39,15 @@ const feelsLike = computed(() => data.value?.main.feels_like !== null ? Math.flo
               </tr>
               <tr>
                 <th>Wind</th>
-                <td>{{ data?.wind.speed }} m/s</td>
+                <td>{{ weatherData?.wind.speed }} m/s</td>
               </tr>
               <tr>
                 <th>Humidity</th>
-                <td>{{ data?.main.humidity }}%</td>
+                <td>{{ weatherData?.main.humidity }}%</td>
               </tr>
               <tr>
                 <th>Pressure</th>
-                <td>{{ data?.main.pressure }} hPa</td>
+                <td>{{ weatherData?.main.pressure }} hPa</td>
               </tr>
             </tbody>
           </table>
@@ -55,9 +61,5 @@ const feelsLike = computed(() => data.value?.main.feels_like !== null ? Math.flo
 th {
   text-align: left;
   padding-right: 2rem;
-  font-style: normal;
-}
-td {
-  font-style: bold;
 }
 </style>
