@@ -5,11 +5,10 @@ import TheDate from '../components/TheDate.vue';
 import CameraStream from '../components/CameraStream.vue';
 
 const runtimeConfigs = useRuntimeConfig();
-console.log(runtimeConfigs.public.cameraBackyard);
 </script>
 
 <template>
-  <main class="w-[1366px] max-w-[1366px] h-768px max-h-[768px]">
+  <main>
     <GridDisplay>
       <template #item1>
         <TheDate />
@@ -20,13 +19,13 @@ console.log(runtimeConfigs.public.cameraBackyard);
       <template #item3>
         <PrayerTimes />
       </template>
-      <template #item6>
+      <template #item4>
         <CameraStream :stream-url="runtimeConfigs.public.camera1" />
       </template>
-      <template #item7>
+      <template #item5>
         <CameraStream :stream-url="runtimeConfigs.public.camera2" />
       </template>
-      <template #item8>
+      <template #item6>
         <CameraStream :stream-url="runtimeConfigs.public.camera3" />
       </template>
     </GridDisplay>

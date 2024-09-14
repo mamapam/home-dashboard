@@ -19,7 +19,7 @@ const formattedDate = computed(() => {
 </script>
 
 <template>
-  <TheCard class="h-[85px]">
+  <TheCard>
     <div class="flex flex-col justify-center items-center">
       <p class="font-bold text-xl text-center">{{ formattedDate }}</p>
       <p class="font-bold text-3.5xl text-center text-primary-500">
