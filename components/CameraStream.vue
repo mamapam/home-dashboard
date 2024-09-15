@@ -60,7 +60,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <TheCard>
+  <TheCard :apply-padding="false">
     <video id="webrtc-video" ref="videoEl" controls autoplay muted></video>
   </TheCard>
 </template>

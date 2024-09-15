@@ -14,7 +14,7 @@ useIntervalFn(async () => {
 
 <template>
   <TheCard>
-    <div class="w-full h-full">
+    <div>
       <div class="flex justify-around pb-3">
         <div class="flex flex-col">
           <p class="text-primary-500 font-bold text-xl">{{ weatherData?.name }},  {{ weatherData?.sys.country }}</p>
@@ -28,7 +28,7 @@ useIntervalFn(async () => {
         </div>
       </div>
       <div class="flex items-center justify-around">
-        <p class="font-bold text-5xl text-primary-500">{{ temperature }}&deg;C</p>
+        <p class="font-bold text-5xl text-primary-500 pr-10">{{ temperature }}&deg;C</p>
         <div>
           <p class="text-mixed-600 border-b-primary-500 border-b-2 mb-2">Details</p>
           <table class="table-auto">

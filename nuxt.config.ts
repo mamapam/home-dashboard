@@ -40,7 +40,7 @@ export default defineNuxtConfig({
           colors: {
             'dark-100': '#121212',
             'dark-200': '#282828',
-            'primary-500': '#a688fa',
+            'primary-500': '#94a3b8',
             'mixed-600': '#908d96'
           },
           fontSize: {

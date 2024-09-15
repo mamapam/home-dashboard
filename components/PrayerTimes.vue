@@ -22,9 +22,9 @@ watch(currentTime, async () => {
 
 <template>
   <TheCard>
-    <div class="flex">
+    <div class="flex flex-col">
       <h3
-        class="text-2xl text-primary-500 font-bold origin-top-left rotate-[270deg] translate-y-[200px] w-[50px] text-nowrap"
+        class="text-2xl text-primary-500 font-bold origin-top-left text-center pb-4 text-nowrap"
       >
         Prayer Times
       </h3>
