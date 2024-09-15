@@ -6,7 +6,7 @@
     <div class="item4"><slot name="item4"></slot></div>
     <div class="item5"><slot name="item5"></slot></div>
     <div class="item6"><slot name="item6"></slot></div>
-    <div class="item7"><slot name="item6"></slot></div>
+    <div class="item7"><slot name="item7"></slot></div>
   </div>
 </template>
 

@@ -19,13 +19,13 @@ export const convertMonthNumberToString = (monthNum: number) => {
 
 export const convertDayNumberToString = (dayNum: number) => {
   const days = [
+    'Sunday',
     'Monday',
     'Tuesday',
     'Wednesday',
     'Thursday',
     'Friday',
-    'Saturday',
-    'Sunday'
+    'Saturday'
   ];
 
   return days[dayNum];
